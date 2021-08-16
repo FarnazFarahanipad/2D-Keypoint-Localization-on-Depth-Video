@@ -2,7 +2,7 @@
 2D Hand Keypoint Localization  on Depth Video through Video to Video Translation
 
 This repository contains the code for method introduced in:
-Markerless 2D Fingertip Localization on Depth Videos Using PairedVideo-To-Video Translation
+http://github.com - automatic! Markerless 2D Fingertip Localization on Depth Videos Using PairedVideo-To-Video Translation
 
 # Requirements
 To run the code you can, e.g., install the following requirements:
