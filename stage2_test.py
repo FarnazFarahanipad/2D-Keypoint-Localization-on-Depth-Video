@@ -173,4 +173,4 @@ name_predicted = np.loadtxt("predicted_handpose_5_new_test.txt", dtype=str, deli
 pr= pr.reshape(-1,5,3)
 
 ME = getMeanError(gt[:,:,:2],pr[:,:,:2])
-print("2D ME (in pixels):", ME)
+print("2D ME on example video of 30 frames (in pixels):", ME)
