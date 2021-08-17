@@ -9,6 +9,7 @@ from torch.autograd import Variable
 import util.util as util
 from util.visualizer import Visualizer
 from util import html
+from models.models import create_model
 
 class CustomDatasetDataLoader(BaseDataLoader):
     def name(self):
