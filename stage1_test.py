@@ -6,6 +6,9 @@ import fractions
 from collections import OrderedDict
 from torch.autograd import Variable
 
+import util.util as util
+from util.visualizer import Visualizer
+from util import html
 
 class CustomDatasetDataLoader(BaseDataLoader):
     def name(self):
