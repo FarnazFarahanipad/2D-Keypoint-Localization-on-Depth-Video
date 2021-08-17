@@ -25,7 +25,7 @@ To run the code you can, e.g., install the following requirements:
    
 * Example of translated sequences from the first stage can be downloaded from [here](https://drive.google.com/drive/folders/1lWfcNNHIkk0071InsOP-R2yAvRNJZYt9?usp=sharing)
 
-* Next, to perform the segmentation in the second stage, make sure the trasnlated sequenced are in the correct path as above before running  stage2_test.py.
+* Next, to perform the 2D keypoint localization in the second stage on example video result from the first stage, make sure the trasnlated sequenced are in the correct path as above before running  stage2_test.py.
 
 
 # Acknowledgments
