@@ -1,1 +1,1 @@
-example of translated sequences from the first stage can be downloaded from [here](https://drive.google.com/drive/folders/14RfvHUSVPnFCpa1G-0mdLzPoi0r7YqtQ?usp=sharing, https://drive.google.com/drive/folders/1cq95D7rKGRXTRtK3JIaT0iThAkv3bybP?usp=sharing, https://drive.google.com/drive/folders/1fV8vodZBohacYsGJ-5io9b4NTLStd7UU?usp=sharing, https://drive.google.com/drive/folders/1y68d5BBFzLnm4ZkwOHb8ZPyuRkouYwCa?usp=sharing)
+These translated sequences will be used in the second stage where each color resion is segmented before estimation of the 2D coordinates.   
