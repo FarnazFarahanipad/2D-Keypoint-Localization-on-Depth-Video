@@ -6,24 +6,14 @@ import glob
 from PIL import *
 import math
 
-def loadDepthMap(filename):
-    """
-    Read a depth-map
-    :param filename: file name to load
-    :return: image data of depth image
-    """
-    with open(filename) as f:
-        img = Image.open(filename)
-        # top 8 bits of depth are packed into green channel and lower 8 bits into blue
-        assert len(img.getbands()) == 3
-        r, g, b = img.split()
-        r = np.asarray(r,np.int32)
-        g = np.asarray(g,np.int32)
-        b = np.asarray(b,np.int32)
-        dpt = np.bitwise_or(np.left_shift(g,8),b)
-        imgdata = np.asarray(dpt,np.float32)
 
-    return imgdata
+def getMeanError(gt ,joints):
+    """
+    get average error over all joints, averaged over sequence
+    :return: mean error
+    """
+   return numpy.nanmean(numpy.sqrt(numpy.square(gt - joints).sum(axis=2)), axis=1).mean()
+
 
 def extract_joint(mask):
 
@@ -32,6 +22,7 @@ def extract_joint(mask):
   # print(stats)
   plt.scatter(centroids[1,0],centroids[1,1],marker ='+',color ='r')
   return (centroids[1])
+
 
 p= open("predicted_handpose_5_new_test.txt", "w+")
 a= open("actual_handpose_5_new_test.txt", "w+")
@@ -66,7 +57,7 @@ for image in glob.glob('results\\handpose_5_new_test\\test_latest\\001\\fake_B_*
   print("Index",centroid_Ind)
   p.write(str(centroid_Ind[0]) +','+str(centroid_Ind[1]) +',')
   centroid_Ind_depth = testA [math.floor(centroid_Ind[0]),math.floor(centroid_Ind[1])]
-  p.write(str(centroid_Ind_depth) +'\n')
+  p.write(str(centroid_Ind_depth) +',')
   
   #Middle
   light_yellow = (9, 72, 157)
@@ -99,6 +90,86 @@ for image in glob.glob('results\\handpose_5_new_test\\test_latest\\001\\fake_B_*
   print("Pinky",centroid_Pnk)
   p.write(str(centroid_Pnk[0]) +','+str(centroid_Pnk[1]) +',')
   centroid_Pnk_depth = testA [math.floor(centroid_Pnk[0]),math.floor(centroid_Pnk[1])]
-  p.write(str(centroid_Pnk_depth) +',')
+  p.write(str(centroid_Pnk_depth) +'\n')
   
-  
+    
+    
+  # to read and extract ground truth 2D coordinate
+
+  image_labeled_org = imageB[:-4]+'_B.jpg'
+  fullB = 'results\\handpose_5_new_test\\test_latest\\001\\'+ image_labeled_org
+  image_labeled = cv2.imread(fullB)
+  Converted_image_labeled = cv2.cvtColor(image_labeled, cv2.COLOR_BGR2RGB)
+  plt.imshow(Converted_image_labeled)
+  hsv_Converted_image_labeled = cv2.cvtColor(Converted_image_labeled, cv2.COLOR_RGB2HSV)
+  a.write(image_labeled_org +',')
+
+  #Thumb
+  light_red = ( 0, 51, 90)
+  dark_red= (5,255,255)
+  mask = cv2.inRange(hsv_Converted_image_labeled,light_red,dark_red)
+  plt.figure(),plt.imshow(mask, cmap="gray")
+  centroid_Thb = extract_joint(mask)
+  print("Thumb",centroid_Thb)
+  a.write(str(centroid_Thb[0]) +','+str(centroid_Thb[1]) +',')
+  centroid_Thb_depth = testA [math.floor(centroid_Thb[0]),math.floor(centroid_Thb[1])]
+  a.write(str(centroid_Thb_depth) +',')
+
+  #Index
+  light_cyan = (90, 124, 198)
+  dark_cyan = (103, 255, 255)
+  mask = cv2.inRange(hsv_Converted_image_labeled,light_cyan,dark_cyan)
+  plt.figure(),plt.imshow(mask, cmap="gray")
+  centroid_Ind = extract_joint(mask)
+  print("Index",centroid_Ind)
+  plt.figure()
+  a.write(str(centroid_Ind[0]) +','+str(centroid_Ind[1]) +',')
+  centroid_Ind_depth = testA [math.floor(centroid_Ind[0]),math.floor(centroid_Ind[1])]
+  a.write(str(centroid_Ind_depth) +',')
+
+  #Middle
+  light_yellow = (9, 72, 157)
+  dark_yellow  = (80, 255, 255)
+  mask = cv2.inRange(hsv_Converted_image_labeled,light_yellow,dark_yellow)
+  plt.figure(),plt.imshow(mask, cmap="gray")
+  centroid_Mdl = extract_joint(mask)
+  print("Middle",centroid_Mdl)
+  a.write(str(centroid_Mdl[0]) +','+str(centroid_Mdl[1]) +',')
+  centroid_Mdl_depth = testA [math.floor(centroid_Mdl[0]),math.floor(centroid_Mdl[1])]
+  a.write(str(centroid_Mdl_depth) +',')
+
+  #Ring
+  light_green = ( 40, 98, 39)
+  dark_green= (80,255,255)
+  mask = cv2.inRange(hsv_Converted_image_labeled,light_green,dark_green)
+  plt.figure(),plt.imshow(mask, cmap="gray")
+  centroid_Rng = extract_joint(mask)
+  print("Ring",centroid_Rng)
+  a.write(str(centroid_Rng[0]) +','+str(centroid_Rng[1]) +',')
+  centroid_Rng_depth = testA [math.floor(centroid_Rng[0]),math.floor(centroid_Rng[1])]
+  a.write(str(centroid_Rng_depth) +',')
+
+  #Pinky
+  light_blue = ( 99, 250, 0)
+  dark_blue= (179,255 ,255)
+  mask = cv2.inRange(hsv_Converted_image_labeled,light_blue,dark_blue)
+  plt.figure(),plt.imshow(mask, cmap="gray")
+  centroid_Pnk = extract_joint(mask)
+  print("Pinky",centroid_Pnk)
+  a.write(str(centroid_Pnk[0]) +','+str(centroid_Pnk[1]) +',')
+  centroid_Pnk_depth = testA [math.floor(centroid_Pnk[0]),math.floor(centroid_Pnk[1])]
+  a.write(str(centroid_Pnk_depth) +'\n')
+
+p.close()
+a.close()
+
+
+gt = np.loadtxt("actual_handpose_5_new_test.txt", dtype=float, delimiter=",",usecols=range(1,16))
+name_actual = np.loadtxt("actual_handpose_5_new_test.txt", dtype=str, delimiter=",",usecols=range(0,1))
+gt= gt.reshape(-1,5,3)
+
+pr = np.loadtxt("predicted_handpose_5_new_test.txt", dtype=float, delimiter=",",usecols=range(1,16))
+name_predicted = np.loadtxt("predicted_handpose_5_new_test.txt", dtype=str, delimiter=",",usecols=range(0,1))
+pr= pr.reshape(-1,5,3)
+
+ME = getMeanError(gt[:,:,:2],pr[:,:,:2])
