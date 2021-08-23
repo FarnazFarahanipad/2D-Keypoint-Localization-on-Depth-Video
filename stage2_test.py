@@ -111,7 +111,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   mask = cv2.inRange(hsv_Converted_image_labeled,light_red,dark_red)
   plt.figure(),plt.imshow(mask, cmap="gray")
   centroid_Thb = extract_joint(mask)
-  print("Thumb",centroid_Thb)
+  print("Thumb_GT",centroid_Thb)
   a.write(str(centroid_Thb[0]) +','+str(centroid_Thb[1]) +',')
   centroid_Thb_depth = testA [math.floor(centroid_Thb[0]),math.floor(centroid_Thb[1])]
   a.write(str(centroid_Thb_depth) +',')
@@ -122,7 +122,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   mask = cv2.inRange(hsv_Converted_image_labeled,light_cyan,dark_cyan)
   plt.figure(),plt.imshow(mask, cmap="gray")
   centroid_Ind = extract_joint(mask)
-  print("Index",centroid_Ind)
+  print("Index_GT",centroid_Ind)
   plt.figure()
   a.write(str(centroid_Ind[0]) +','+str(centroid_Ind[1]) +',')
   centroid_Ind_depth = testA [math.floor(centroid_Ind[0]),math.floor(centroid_Ind[1])]
@@ -134,7 +134,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   mask = cv2.inRange(hsv_Converted_image_labeled,light_yellow,dark_yellow)
   plt.figure(),plt.imshow(mask, cmap="gray")
   centroid_Mdl = extract_joint(mask)
-  print("Middle",centroid_Mdl)
+  print("Middle_GT",centroid_Mdl)
   a.write(str(centroid_Mdl[0]) +','+str(centroid_Mdl[1]) +',')
   centroid_Mdl_depth = testA [math.floor(centroid_Mdl[0]),math.floor(centroid_Mdl[1])]
   a.write(str(centroid_Mdl_depth) +',')
@@ -145,7 +145,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   mask = cv2.inRange(hsv_Converted_image_labeled,light_green,dark_green)
   plt.figure(),plt.imshow(mask, cmap="gray")
   centroid_Rng = extract_joint(mask)
-  print("Ring",centroid_Rng)
+  print("Ring_GT",centroid_Rng)
   a.write(str(centroid_Rng[0]) +','+str(centroid_Rng[1]) +',')
   centroid_Rng_depth = testA [math.floor(centroid_Rng[0]),math.floor(centroid_Rng[1])]
   a.write(str(centroid_Rng_depth) +',')
@@ -156,7 +156,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   mask = cv2.inRange(hsv_Converted_image_labeled,light_blue,dark_blue)
   plt.figure(),plt.imshow(mask, cmap="gray")
   centroid_Pnk = extract_joint(mask)
-  print("Pinky",centroid_Pnk)
+  print("Pinky_GT",centroid_Pnk)
   a.write(str(centroid_Pnk[0]) +','+str(centroid_Pnk[1]) +',')
   centroid_Pnk_depth = testA [math.floor(centroid_Pnk[0]),math.floor(centroid_Pnk[1])]
   a.write(str(centroid_Pnk_depth) +'\n')
