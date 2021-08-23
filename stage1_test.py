@@ -12,6 +12,8 @@ from util import html
 from models.models import create_model
 from util.test_options import TestOptions
 
+from data.data_loader import CreateDataLoader
+
 
 opt = TestOptions().parse(save=False)
 opt.nThreads = 1   # test code only supports nThreads = 1
