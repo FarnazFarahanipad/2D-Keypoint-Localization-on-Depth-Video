@@ -9,10 +9,10 @@ import math
 
 def getMeanError(gt ,joints):
     """
-    get average error over all joints, averaged over sequence
+    get average error over all joints, averaged over sequenc
     :return: mean error
     """
-   return np.nanmean(np.sqrt(np.square(gt - joints).sum(axis=2)), axis=1).mean()
+    return np.nanmean(np.sqrt(np.square(gt - joints).sum(axis=2)), axis=1).mean()
 
 
 def extract_joint(mask):
