@@ -27,7 +27,7 @@ def extract_joint(mask):
 p= open("predicted_handpose_5_new_test.txt", "w+")
 a= open("actual_handpose_5_new_test.txt", "w+")
 
-for image in glob.glob('results\\handpose_5_new\\test_latest\\001\\fake_B_*.jpg'):
+for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   test = cv2.imread(image)
   imageN = os.path.basename (image)
   imageA= 'real_A' +imageN[6:]
