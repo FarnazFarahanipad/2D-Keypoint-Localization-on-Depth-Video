@@ -31,7 +31,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   test = cv2.imread(image)
   imageN = os.path.basename (image)
   imageA= 'real_A' +imageN[6:]
-  fullA=  'results\\handpose_5_new\\test_latest\\001\\'+ imageA
+  fullA=  'results\\handpose_5_new\\test_latest\\1\\'+ imageA
   testA = cv2.imread(fullA,  cv2.IMREAD_ANYDEPTH)
   ConvertedTest = cv2.cvtColor(test, cv2.COLOR_BGR2RGB)
   hsv_ConvertedTest = cv2.cvtColor(ConvertedTest, cv2.COLOR_RGB2HSV)
@@ -97,7 +97,7 @@ for image in glob.glob('results\\handpose_5_new\\test_latest\\1\\fake_B_*.jpg'):
   # to read and extract ground truth 2D coordinate
 
   image_labeled_org = 'real' + imageN[4:]
-  fullB = 'results\\handpose_5_new\\test_latest\\001\\'+ image_labeled_org
+  fullB = 'results\\handpose_5_new\\test_latest\\1\\'+ image_labeled_org
   image_labeled = cv2.imread(fullB)
   Converted_image_labeled = cv2.cvtColor(image_labeled, cv2.COLOR_BGR2RGB)
   plt.imshow(Converted_image_labeled)
