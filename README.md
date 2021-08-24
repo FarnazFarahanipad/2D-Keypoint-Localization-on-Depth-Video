@@ -32,15 +32,13 @@ To run the code you can, e.g., install the following requirements:
 If you use this paper for your research or projects, please cite [A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation](https://dl.acm.org/doi/pdf/10.1145/3453892.3453904)
 
 
-
-
-# Acknowledgments
-This code borrows heavily from vid2vid and pix2pixHD.
-
-\cite{@inproceedings{farahanipad2021pipeline,
+\misc{@inproceedings{farahanipad2021pipeline,
   title={A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation},
   author={Farahanipad, Farnaz and Rezaei, Mohammad and Dillhoff, Alex and Kamangar, Farhad and Athitsos, Vassilis},
   booktitle={The 14th PErvasive Technologies Related to Assistive Environments Conference},
   pages={226--233},
   year={2021}
 }}
+
+# Acknowledgments
+This code borrows heavily from vid2vid and pix2pixHD.
