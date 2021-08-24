@@ -28,6 +28,22 @@ To run the code you can, e.g., install the following requirements:
 * Next, to perform the 2D keypoint localization in the second stage on example video result from the first stage, make sure the trasnlated sequenced are in the correct path as above before running  stage2_test.py.
 
 
+# Bibtex
+If you use this paper for your research or projects, please cite [A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation](https://dl.acm.org/doi/pdf/10.1145/3453892.3453904)
+
+@article{syah2021new,
+  title={A New Hybrid Algorithm for Multi-Objective Reactive Power Planning via FACTS Devices and Renewable Wind Resources},
+  author={Syah, Rahmad and Khorshidian Mianaei, Peyman and Elveny, Marischa and Ahmadian, Naeim and Ramdan, Dadan and Habibifar, Reza and Davarpanah, Afshin},
+  journal={Sensors},
+  volume={21},
+  number={15},
+  pages={5246},
+  year={2021},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+
+
 # Acknowledgments
 This code borrows heavily from vid2vid and pix2pixHD.
+
 
