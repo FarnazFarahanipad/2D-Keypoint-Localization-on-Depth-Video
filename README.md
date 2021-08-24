@@ -29,7 +29,7 @@ To run the code you can, e.g., install the following requirements:
 
 
 # Bibtex
-If you use this paper for your research or projects, please cite [A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation](https://dl.acm.org/doi/pdf/10.1145/3453892.3453904)
+If you use this paper for your research or projects, please cite [A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation](https://dl.acm.org/doi/pdf/10.1145/3453892.3453904).
 
 
 # Acknowledgments
