@@ -28,9 +28,27 @@ To run the code you can, e.g., install the following requirements:
 * Next, to perform the 2D keypoint localization in the second stage on example video result from the first stage, make sure the trasnlated sequenced are in the correct path as above before running  stage2_test.py.
 
 
-# Bibtex
+# BibTex
 If you use this paper for your research or projects, please cite [A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation](https://dl.acm.org/doi/pdf/10.1145/3453892.3453904).
 
+@inproceedings{10.1145/3453892.3453904,
+author = {Farahanipad, Farnaz and Rezaei, Mohammad and Dillhoff, Alex and Kamangar, Farhad and Athitsos, Vassilis},
+title = {A Pipeline for Hand 2-D Keypoint Localization Using Unpaired Image to Image Translation},
+year = {2021},
+isbn = {9781450387927},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3453892.3453904},
+doi = {10.1145/3453892.3453904},
+booktitle = {The 14th PErvasive Technologies Related to Assistive Environments Conference},
+pages = {226–233},
+numpages = {8},
+keywords = {domain transfer, fingertip detection and localization, 2-D hand pose estimation, generative adversarial networks, human-computer interaction},
+location = {Corfu, Greece},
+series = {PETRA 2021}
+}
 
+
+\bibliography
 # Acknowledgments
 This code borrows heavily from vid2vid and pix2pixHD.
