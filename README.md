@@ -4,6 +4,10 @@
 This repository contains the code for method introduced in:
 Markerless 2D Fingertip Localization on Depth Videos Using PairedVideo-To-Video Translation
 
+
+https://user-images.githubusercontent.com/50027513/130702108-c084d407-e95f-485e-8514-2a75fc285d18.mp4
+
+
 # Requirements
 To run the code you can, e.g., install the following requirements:
 
