@@ -49,6 +49,5 @@ series = {PETRA 2021}
 }
 
 
-\bibliography
 # Acknowledgments
 This code borrows heavily from vid2vid and pix2pixHD.
